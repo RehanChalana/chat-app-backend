@@ -1,8 +1,9 @@
-package com.rehan.chatapplication.chatrooms;
+package com.rehan.chatapplication.rooms;
 
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -14,9 +15,9 @@ public class ChatRoomRestController {
         this.chatRoomService=chatRoomService;
     }
 
-    @GetMapping("/chatrooms")
-    public List<ChatRoom> findAll() {
-        return chatRoomService.findAll();
+    @GetMapping("/chatrooms/{userId}")
+    public List<ChatRoom> findByUserId(@PathVariable int userId) {
+        return chatRoomService.findByUserId(userId);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.rehan.chatapplication.chatrooms;
+package com.rehan.chatapplication.rooms;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ public class ChatRoomService {
         this.chatRoomRepository=chatRoomRepository;
     }
 
-    public List<ChatRoom> findAll() {
-        return chatRoomRepository.findAll();
+    public List<ChatRoom> findByUserId(int userId) {
+        return chatRoomRepository.findByUserId(userId);
     }
 
 
