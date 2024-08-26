@@ -1,4 +1,4 @@
-package com.rehan.chatapplication.chatrooms;
+package com.rehan.chatapplication.rooms;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
