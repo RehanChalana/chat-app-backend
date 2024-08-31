@@ -19,9 +19,19 @@ public class ChatRoomRestController {
         this.chatRoomService=chatRoomService;
     }
 
-    @PostMapping("/rooms")
+   @PostMapping("/rooms")
    public RoomResponseDTO createNewRoom(@RequestBody RoomRequestDTO requestDTO) {
         return chatRoomService.createNewRoom(requestDTO);
+   }
+
+   @GetMapping("/rooms/{roomId}")
+   public RoomResponseDTO findById(@PathVariable int roomId) {
+        return chatRoomService.findById(roomId);
+   }
+
+   @GetMapping("/rooms/user/{userId}")
+    public List<RoomResponseDTO> findByUserId(@PathVariable int userId) {
+        return chatRoomService.findByUserId(userId);
    }
 
 }
