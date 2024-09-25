@@ -5,5 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 public interface RoomMembershipRepository extends CrudRepository<RoomMembership,Integer> {
-    List<RoomMembership> findByUserId(int id);
+   List<RoomMembership> findAll();
+
+   List<RoomMembership> findAllByUserId(int userId);
 }
