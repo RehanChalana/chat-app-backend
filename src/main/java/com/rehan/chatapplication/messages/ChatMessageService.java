@@ -3,8 +3,8 @@ package com.rehan.chatapplication.messages;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.rehan.chatapplication.messages.dto.ChatMessageDTO;
 import com.rehan.chatapplication.messages.dto.ChatMessageMapper;
+import com.rehan.chatapplication.messages.dto.MessageResponseDTO;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,7 +18,7 @@ public class ChatMessageService {
         this.messageMapper=messageMapper;
     }
 
-    public List<ChatMessageDTO> findChatMessagesByRoomId(int roomId) {
+    public List<MessageResponseDTO> findChatMessagesByRoomId(int roomId) {
         List<ChatMessage> messages = chatMessageRepository.findChatMessagesByRoomId(roomId);
         return messages.stream().map(messageMapper::entityToDTO).collect(Collectors.toList());
     }

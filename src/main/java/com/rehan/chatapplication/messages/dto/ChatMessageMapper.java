@@ -5,6 +5,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ChatMessageMapper {
-    ChatMessageDTO entityToDTO(ChatMessage entity);
-    ChatMessage DTOToEntity(ChatMessageDTO dto);
+    MessageResponseDTO entityToDTO(ChatMessage entity);
+    ChatMessage DTOToEntity(MessageRequestDTO dto);
 }
