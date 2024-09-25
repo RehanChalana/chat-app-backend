@@ -4,12 +4,14 @@ import java.util.List;
 
 import com.rehan.chatapplication.rooms.dto.RoomRequestDTO;
 import com.rehan.chatapplication.rooms.dto.RoomResponseDTO;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
 @RestController
 public class ChatRoomRestController {
 
@@ -32,6 +34,6 @@ public class ChatRoomRestController {
    @GetMapping("/rooms/user/{userId}")
     public List<RoomResponseDTO> findByUserId(@PathVariable int userId) {
         return chatRoomService.findByUserId(userId);
-   }
+    }
 
 }
